@@ -1,0 +1,18 @@
+{
+  "expo": {
+    "scheme": "acme",
+    "web": {
+      "bundler": "metro"
+    },
+    "name": "care-app-pbl",
+    "slug": "care-app-pbl",
+    "extra": {
+      "eas": {
+        "projectId": "94962907-16ae-4994-b41a-45c9ae81fac3"
+      }
+    },
+    "android": {
+      "package": "com.careapp.pblcare"
+    }
+  }
+}
