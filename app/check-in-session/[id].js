@@ -176,6 +176,16 @@ const StartSession = () => {
               item={data[0]}
             />
 
+
+            {locationObtained && !scanned && cameraPermissionGranted === true && (
+              <View style={{ flex: 1, height: 400 }}>
+                <Camera
+                  style={{ flex: 1 }}
+                  type={Camera.Constants.Type.back}
+                  onBarCodeScanned={handleBarCodeScanned}
+                />
+              </View>
+            )}
           </View>
         )}
       </ScrollView>
