@@ -14,12 +14,13 @@ import CompletedSessionCard from "../../../common/cards/completedSessions/Comple
 
 const CompletedSessions = ({ selectedDate }) => {
   const router = useRouter();
-  const { data, isLoading, error, refetch } = useFetch(
+  const { data = [], isLoading, error, refetch } = useFetch(
     "sessions/get_completed_sessions",
     {
       viewed_date: selectedDate,
     }
   );
+
 
   useEffect(() => {
     refetch();

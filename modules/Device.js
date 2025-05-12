@@ -49,7 +49,7 @@ const Device = {
     
           const options = {
             method: 'POST',
-            url: `https://pbl.ghimici.co.uk/mobile_api/${endpoint}.api.php`,
+            url: `https://app.pblcare.com/mobile_api/${endpoint}.api.php`,
             headers: {
               'Content-Type': 'application/json',
             },
@@ -86,7 +86,7 @@ const Device = {
     
           const options = {
             method: 'POST',
-            url: `https://pbl.ghimici.co.uk/mobile_api/${endpoint}.api.php`,
+            url: `https://app.pblcare.com/mobile_api/${endpoint}.api.php`,
             headers: {
               'Content-Type': 'application/json',
             },

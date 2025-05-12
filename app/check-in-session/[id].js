@@ -105,13 +105,19 @@ const StartSession = () => {
 
     const getCameraPermission = async () => {
       try {
+        console.log(Platform.OS);
+        /*
         if (Platform.OS === 'web') {
           // On web, camera permission is not required
           setCameraPermissionGranted(true);
           return;
         }
 
+
+         */
         const { status } = await Camera.getCameraPermissionsAsync();
+
+        console.log(status);
 
         if (status === 'granted') {
           setCameraPermissionGranted(true);
@@ -131,6 +137,7 @@ const StartSession = () => {
       }
     };
 
+    console.log("Requesting permissions...");
     getLocationPermission();
     getCameraPermission();
   }, []);
@@ -168,15 +175,7 @@ const StartSession = () => {
             <PatientPanel
               item={data[0]}
             />
-            {locationObtained && !scanned && cameraPermissionGranted === true && (
-              <View style={{ flex: 1, height: 400 }}>
-                <Camera
-                  style={{ flex: 1 }}
-                  type={Camera.Constants.Type.back}
-                  onBarCodeScanned={handleBarCodeScanned}
-                />
-              </View>
-            )}
+
           </View>
         )}
       </ScrollView>

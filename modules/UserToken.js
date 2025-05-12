@@ -50,9 +50,10 @@ const UserToken = {
           const storedDeviceNumberEnctypted = Encryption.encrypt(storedDeviceNumber);
           const apiKeyEncrypted = Encryption.encrypt(api_key);
 
+
           const options = {
             method: 'POST',
-            url: `https://pbl.ghimici.co.uk/mobile_api/${endpoint}.api.php`,
+            url: `https://app.pblcare.com/mobile_api/${endpoint}.api.php`,
             headers: {
               'Content-Type': 'application/json',
             },
@@ -84,6 +85,7 @@ const UserToken = {
       signIn: async (username, password) => {
         try {
           const storedDeviceNumber = await Device.getDeviceNumber();
+          console.log('Stored Device Number:', storedDeviceNumber);
           const endpoint = 'authentication/sign_in';
     
           //Encrypt data
@@ -92,9 +94,11 @@ const UserToken = {
           const usernameEncrypted = Encryption.encrypt(username);
           const passwordEncrypted = Encryption.encrypt(password);
 
+          console.log('[UserToken.js] signIn - About to send sign in request');
+
           const options = {
             method: 'POST',
-            url: `https://pbl.ghimici.co.uk/mobile_api/${endpoint}.api.php`,
+            url: `https://app.pblcare.com/mobile_api/${endpoint}.api.php`,
             headers: {
               'Content-Type': 'application/json',
             },

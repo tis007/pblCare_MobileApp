@@ -4,7 +4,7 @@ import { View, Text, TouchableOpacity, ActivityIndicator } from "react-native";
 
 import styles from "./TasksStyle";
 import { COLORS } from "../../../constants";
-import { TaskCard } from "../..";
+import TaskCard from "../../common/cards/tasks/TasksCard";
 
 const Tasks = ({ item }) => {
   const router = useRouter();

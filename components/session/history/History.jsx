@@ -4,7 +4,7 @@ import { View, Text, TouchableOpacity, ActivityIndicator } from "react-native";
 
 import styles from "./HistoryStyle";
 import { COLORS } from "../../../constants";
-import { HistoryCard } from "../..";
+import HistoryCard from "../../common/cards/history/HistoryCard";
 
 const History = ({ item }) => {
   const router = useRouter();

@@ -15,7 +15,7 @@ import ActiveSessionCard from "../../../common/cards/activeSessions/ActiveSessio
 
 const ActiveSessions = ({ selectedDate }) => {
   const router = useRouter();
-  const { data, isLoading, error, refetch } = useFetch(
+  const { data = [], isLoading, error, refetch } = useFetch(
     "sessions/get_active_sessions",
     {
       viewed_date: selectedDate,

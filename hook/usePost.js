@@ -24,7 +24,7 @@ const usePost = async (endpoint, data) => {
         data.device_number = storedDeviceNumberEncrypted;
         data.user_token = storedUserTokenEncrypted;
 
-        const response = await axios.post(`https://pbl.ghimici.co.uk/mobile_api/${endpoint}.api.php`, data, {
+        const response = await axios.post(`https://app.pblcare.com/mobile_api/${endpoint}.api.php`, data, {
             headers: {
                 'Content-Type': 'application/json',
             },

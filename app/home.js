@@ -4,12 +4,12 @@ import { Stack, useRouter } from "expo-router";
 
 import { COLORS, icons, images, SIZES } from "../constants";
 import {
-  ScreenHeaderBtn,
-  ScreenHeaderLogo,
-  MainMenu,
-  DatePicker,
-  ActiveSessions,
-  CompletedSessions
+    ScreenHeaderBtn,
+    ScreenHeaderLogo,
+    MainMenu,
+    DatePicker,
+    ActiveSessions,
+    CompletedSessions, StartSession
 } from "../components";
 
 import { useNavigation } from '@react-navigation/native';
@@ -87,6 +87,9 @@ const Home = () => {
           {showActiveSessions && <ActiveSessions key={selectedDate} selectedDate={selectedDate} />}
           <CompletedSessions selectedDate={selectedDate} />
         </View>
+          {/* TO REMOVE LATER ONLY FOR TESTING PURPOSES */}
+          <StartSession/>
+          {/* END TO REMOVE LATER */}
       </ScrollView>
       {isMenuVisible && (
         <MainMenu handleMenuItemPress={handleMenuItemPress} />
