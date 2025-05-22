@@ -12,6 +12,10 @@ const CompleteVisitNotesContent = ({ item }) => {
     const [notes, setNotes] = useState(""); // State variable to store notes
 
     const handleComplete = async () => {
+        if (notes.length < 5) {
+            alert('Your visit notes must be at least 50 characters long');
+            return;
+        }
         const sessionNotes = Encryption.encrypt(notes);
 
         const endpoint = "sessions/complete_notes";
@@ -35,7 +39,7 @@ const CompleteVisitNotesContent = ({ item }) => {
                     alert('Please enter your notes for the visit');
                     break;
                 case 'error_short_notes':
-                    alert('Your visit notes are too short, please enter at least 50 characters');
+                    alert('Your visit notes are too short, please enter at least 5 characters');
                     break;
                 case 'error_system':
                     alert('An error occurred while processing your notes submission');
@@ -66,7 +70,7 @@ const CompleteVisitNotesContent = ({ item }) => {
             </Text>
             <TextInput
                 style={styles.textArea}
-                placeholder="Enter notes here... (Min 50 characters)"
+                placeholder="Enter notes here... (Min 5 characters)"
                 multiline
                 value={notes}
                 onChangeText={handleNotesChange}

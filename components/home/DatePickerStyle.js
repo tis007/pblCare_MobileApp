@@ -11,7 +11,6 @@ const styles = StyleSheet.create({
         paddingHorizontal: SIZES.medium,
       },
       dateItem: {
-        borderRadius: SIZES.radius,
         paddingVertical: SIZES.small,
         paddingHorizontal: SIZES.medium,
         marginRight: SIZES.medium,

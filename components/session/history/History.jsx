@@ -21,7 +21,7 @@ const History = ({ item }) => {
             <HistoryCard
               key={`history-${index}`}
               item={care_history}
-              handleNavigate={() => router.push(`/completed-session/${item.care_history_session_number}`)}
+              handleNavigate={() => router.push(`/completed-session/${care_history.care_history_session_number}`)}
             />
           ))
         )}

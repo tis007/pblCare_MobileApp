@@ -1,3 +1,5 @@
+import { Platform } from 'react-native';
+
 const COLORS = {
   primary: "#4C9691",
   secondary: "#A6864A",

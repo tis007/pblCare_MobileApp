@@ -1,4 +1,4 @@
-import { Stack, useRouter, useSearchParams } from "expo-router";
+import {Stack, useLocalSearchParams, useRouter} from "expo-router";
 import { useCallback, useState } from "react";
 import { Linking } from 'react-native';
 import Encryption from "../../modules/Encryption";
@@ -32,12 +32,15 @@ import useFetch from "../../hook/useFetch";
 const tabs = ["Visit", "Patient", "Tasks", "Notes", "History"];
 
 const ActiveSession = () => {
-  const params = useSearchParams();
+  const params = useLocalSearchParams();
   const router = useRouter();
 
+  console.log("params", params.id);
   const { data, isLoading, error, refetch } = useFetch("sessions/get_session", {
     session_number: params.id,
   });
+
+  console.log("data", data);
 
   const [activeTab, setActiveTab] = useState(tabs[0]);
   const [refreshing, setRefreshing] = useState(false);

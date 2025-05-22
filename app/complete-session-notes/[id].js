@@ -1,15 +1,12 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { Stack, useRouter, useSearchParams } from "expo-router";
-import { View, Text, SafeAreaView, ScrollView, ActivityIndicator, RefreshControl, TouchableOpacity } from "react-native";
-import { BarCodeScanner } from 'expo-barcode-scanner';
-import * as Location from 'expo-location';
+import { Stack, useRouter, useLocalSearchParams } from "expo-router";
+import { View, Text, SafeAreaView, ScrollView, ActivityIndicator, RefreshControl } from "react-native";
 import { PatientPanel, ScreenHeaderBtn, CompleteVisitNotesContent } from "../../components";
 import { COLORS, icons, SIZES } from "../../constants";
 import useFetch from "../../hook/useFetch";
-import usePost from "../../hook/usePost";
 
 const StartSession = () => {
-    const params = useSearchParams();
+    const params = useLocalSearchParams();
     const router = useRouter();
 
     const [refreshing, setRefreshing] = useState(false);
